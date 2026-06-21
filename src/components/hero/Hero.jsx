@@ -1,10 +1,10 @@
 import { RiArrowRightUpLine, RiMailLine } from '@remixicon/react'
 import { Mail } from 'lucide-react'
-import React from 'react'
+import { motion } from "motion/react"
 
 const Hero = () => {
   return (
-    <div className='mt-50 flex w-full'>
+    <div className='relative h-screen w-full mt-50 flex'>
         <div className="left flex flex-col items-start w-1/2 h-full pl-95">
             <div 
             
@@ -53,10 +53,36 @@ const Hero = () => {
               <span className='h-px w-14 bg-white/30 inline-block'></span>
             </div>
         </div>
-        <div className="right w-1/2 h-full relative">
-          <motion.div>
-              
+        <div className="right w-1/2 h-full relative pl-50">
+          <motion.div 
+            animate={{rotate:360}}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className='absolute  blur-3xl opacity-50 bg-linear-to-t from-[#2f5f96] to-[#823ebd] h-131.75 w-97.5'>
           </motion.div>
+          <div 
+          className='
+                          z-10 absolute border-3 border-white/10 h-131.75 w-97.5 rounded-4xl
+                          backdrop-blur-4xl bg-(--transparent-pill)/20
+          '>
+            <div className="profile w-85.25 h-108 m-5 
+                            rounded-4xl overflow-hidden
+            ">
+                <img src='/images/MyImage.png'/>
+            </div>
+            <div className="description">
+              <div className="left flex flex-col ml-7 -mt-2">
+                  <span className='text-white font-[SpaceGrotesk] text-[20px] font-semibold'>Bilal Khalifa</span>
+                  <span>Computer Engineer</span>
+              </div>
+              <div className="right">
+
+              </div>
+            </div>
+          </div>
         </div>
     </div>
   )
