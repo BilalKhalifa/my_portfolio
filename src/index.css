@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/fonts/Montserrat-VariableFont_wght.ttf);
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url(/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+    font-weight: 100 900;
+}
+
+:root{
+    --nav-font: 'Montserrat', sans-serif;
+    --hero-font: 'SpaceGrotesk', sans-serif;
+    --primary : #040711;
+    --transparent-pill : #0b4574;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--primary);
+}
