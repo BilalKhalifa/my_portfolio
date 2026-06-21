@@ -9,6 +9,7 @@ const Navbar = () => {
                 px-2 py-2
                 bg-(--transparent-pill)/10 backdrop-blur-lg
                 rounded-full border border-white/5
+                z-50
     '>
         <h4 className='text-white font-medium'><span className=' bg-[#8ee3f7] h-2 w-2 ml-2 mr-2 inline-block rounded-full'></span>Bilal Khalifa</h4>
         <h4 className='nav-option text-white/50'>About</h4>
