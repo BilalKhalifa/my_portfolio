@@ -1,4 +1,4 @@
-import { RiArrowRightUpLine, RiMailLine } from '@remixicon/react'
+import { RiArrowRightUpLine, RiBardLine, RiCpuLine, RiMailLine, RiMapPinLine } from '@remixicon/react'
 import { Mail } from 'lucide-react'
 import { motion } from "motion/react"
 
@@ -63,26 +63,47 @@ const Hero = () => {
             }}
             className='absolute  blur-3xl opacity-50 bg-linear-to-t from-[#2f5f96] to-[#823ebd] h-131.75 w-97.5'>
           </motion.div>
-          <div 
+        <motion.div 
+
+          animate={{
+            y:[-15 ,15, -15]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
           className='
-                          z-10 absolute border-3 border-white/10 h-131.75 w-97.5 rounded-4xl
-                          backdrop-blur-4xl bg-(--transparent-pill)/20
-          '>
+                          z-10 absolute border-2 border-white/10 h-135 w-97.5 rounded-4xl
+                          backdrop-blur-4xl bg-(--transparent-pill)/20'
+        >
             <div className="profile w-85.25 h-108 m-5 
                             rounded-4xl overflow-hidden
             ">
                 <img src='/images/MyImage.png'/>
             </div>
-            <div className="description">
-              <div className="left flex flex-col ml-7 -mt-2">
+            <div className="description w-full flex">
+              <div className="left flex flex-col w-1/2 ml-7 -mt-2">
                   <span className='text-white font-[SpaceGrotesk] text-[20px] font-semibold'>Bilal Khalifa</span>
-                  <span>Computer Engineer</span>
+                  <span className='font-[Montserrat] text-xs text-[#97E6F5] italic '>Computer Engineer</span>
               </div>
-              <div className="right">
-
+              <div 
+                  className="right flex flex-col w-1/2 gap-1 
+                  font-[Montserrat] text-[10px] text-white/50
+                  items-end mr-7 -mt-2"
+              >
+                <p className='flex gap-2'>
+                  <RiMapPinLine size={15} /> Eru,Navsari, India
+                </p>
+                <p className='flex gap-2'>
+                  <RiCpuLine size={15} /> MERN STACK
+                </p>
+                <p className='flex gap-2 text-[#7DDDFB]'>
+                  <RiBardLine size={15} /> Open To Work
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
     </div>
   )
