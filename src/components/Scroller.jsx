@@ -11,7 +11,7 @@ const Scroller = () => {
     const scaleX = useSpring(scrollYProgress)
 
     useEffect(() => {
-      const sections = ['hero', 'experience', 'work', 'skills', 'resume', 'contact']
+      const sections = ['hero', 'about', 'education', 'work', 'skills', 'resume', 'contact']
 
       sections.forEach((id) => {
         const element = document.getElementById(id)

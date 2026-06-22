@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 
 const Hero = () => {
   return (
-    <div className='relative h-screen w-full mt-50 flex'>
+    <div className='relative h-screen w-full pt-50 flex'>
         <div className="left flex flex-col items-start w-1/2 h-full pl-95">
             <div 
             

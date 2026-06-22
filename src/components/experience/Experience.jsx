@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Experience = () => {
+const Education = () => {
   return (
-    <div className='h-screen w-full bg-blue-500 test-white'>Experience</div>
+    <div className='h-screen w-full bg-blue-500 test-white'>Education</div>
   )
 }
 
-export default Experience
+export default Education

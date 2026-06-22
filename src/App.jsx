@@ -4,11 +4,12 @@ import Navbar from './components/navbar/Navbar'
 import Scroller from './components/Scroller'
 import Lenis from 'lenis'
 import CursorGlow from './components/ui/CursorGlow'
-import Experience from './components/experience/Experience'
 import Work from './components/work/Work'
 import Skills from './components/skills/Skills'
 import Resume from './components/resume/Resume'
 import Contact from './components/contact/Contact'
+import Education from './components/experience/Experience'
+import About from './components/about/About'
 
 const App = () => {
 
@@ -28,8 +29,11 @@ const App = () => {
       <section id="hero">
         <Hero />
       </section>
-      <section id="experience">
-        <Experience />
+      <section id="about">
+        <About />
+      </section>
+      <section id="education">
+        <Education />
       </section>
       <section id="work">
         <Work />

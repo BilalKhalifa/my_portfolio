@@ -7,8 +7,8 @@ gsap.registerPlugin(ScrollToPlugin)
 
 const Navbar = () => {
   const navItems = [
-    { label: 'About', id: 'hero' },
-    { label: 'Experience', id: 'experience' },
+    { label: 'About', id: 'about' },
+    { label: 'Education', id: 'education' },
     { label: 'Work', id: 'work' },
     { label: 'Skills', id: 'skills' },
     { label: 'Resume', id: 'resume' },
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className='flex justify-center items-center gap-5 fixed h-fit w-fit top-5 left-[50%] transform translate-x-[-50%] px-2 py-2 bg-(--transparent-pill)/10 backdrop-blur-lg rounded-full border border-white/5 z-50'>
-      <h4 className='text-white font-medium'>
+      <h4 className='text-white font-medium cursor-pointer' onClick={() => scrollToSection('hero')}>
         <span className='bg-[#8ee3f7] h-2 w-2 ml-2 mr-2 inline-block rounded-full'></span>
         Bilal Khalifa
       </h4>
