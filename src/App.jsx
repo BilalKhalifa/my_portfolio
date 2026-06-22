@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
       autoRaf: true,
-      lerp: 0.04,
+      lerp: 0.1,
       smoothWheel: true
     })
   }, [])
