@@ -1,9 +1,38 @@
 import { RiBardLine } from '@remixicon/react'
-import React from 'react'
+import { Boxes, GitCommitHorizontal, Radio } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { getContributions, getGithubUser } from '../../service'
+import './about.css'
 
 const About = () => {
+
+  const [githubData, setGithubData] = useState(null)
+  const [contribution, setContribution] = useState(null)
+
+  useEffect(() => {
+  const fetchGithub = async () => {
+    try {
+      const [projects, contributions] = await Promise.all([
+        getGithubUser("BilalKhalifa"),
+        getContributions("BilalKhalifa"),
+      ]);
+
+      setGithubData(projects);
+      setContribution(contributions);
+      console.log(projects);
+      console.log(contribution);
+      
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  fetchGithub();
+}, []);
+
   return (
-    <div className='h-screen w-full bg-(--primary) px-70 py-55'>
+    <div className='h-screen flex flex-col w-full bg-(--primary) px-75 py-55'>
       <div 
           className='
                       flex gap-2
@@ -11,6 +40,102 @@ const About = () => {
                     '
       >
         <RiBardLine size={15} className='text-[#97E6F5]' /> // About · Command Center
+      </div>
+      <div>
+        <div className='heading w-1/2 text-6xl font-semibold font-[SpaceGrotesk] mt-5'>
+          <span className='bg-linear-to-r from-[#f2f6f7] to-[#96dcf2] bg-clip-text text-transparent'>A computer engineer, </span>
+          <span className='bg-linear-to-r from-[#80defa] via-[#99e1f5] to-[#b2a2fd] bg-clip-text text-transparent'>building every week.</span>
+        </div>
+      </div>
+      <div className='w-1/2 mt-7 text-lg text-white/50 font-(family-name:--nav-font)'>
+        2026 Computer Engineering graduate at GIDC · GTU. Obsessed with frontend craft — React, motion design, and building things people love to use.
+      </div>
+      <div id="git-info" className='w-full h-fit mt-20 flex gap-4'>
+        {/* Projects card */}
+        <div 
+            id="projects" 
+            className='
+                      flex flex-col w-1/3 p-6 
+                      backdrop-blur-2xl
+                      bg-linear-to-br from-white/20  to-(--transparent-pill)/30
+                      rounded-3xl
+                      border-2 border-white/10
+                      '
+        >
+          <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+            <Boxes size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Projects
+          </h4>
+          <p className='text-white mt-5 flex gap-2 items-end'>
+            <span 
+                  className=' inline-block
+                              font-(family-name:--hero-font) text-5xl font-semibold 
+                              [text-shadow:0_0_20px_rgba(147,230,245,0.5),0_0_40px_rgba(147,230,245,0.25)]'
+            >
+              {githubData?.public_repos}+
+            </span>
+            <span 
+                className=' inline-block 
+                            font-(family-name:--nav-font) text-xs mb-1 text-white/50'
+            >
+              Projects
+            </span>
+          </p>
+        </div>
+        {/* Activity card */}
+        <div 
+            id="git-activity"
+            className='
+                      flex flex-col w-1/3 p-6 
+                      backdrop-blur-2xl
+                      bg-linear-to-br from-white/20  to-(--transparent-pill)/30
+                      rounded-3xl
+                      border-2 border-white/10
+                      '
+        >
+          <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+            <GitCommitHorizontal size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Github Contribution
+          </h4>
+          <p className='text-white mt-5 flex gap-2 items-end'>
+            <span 
+                  className=' inline-block
+                              font-(family-name:--hero-font) text-5xl font-semibold 
+                            '
+            >
+              {contribution}
+            </span>
+            <span 
+                className=' inline-block 
+                            font-(family-name:--nav-font) text-xs mb-1 text-white/50'
+            >
+              Contributions This Year
+            </span>
+          </p>
+        
+        </div>
+        {/* Status Card */}
+        <div 
+            id="status"
+            className='
+                      flex flex-col w-1/3 p-6 
+                      backdrop-blur-2xl
+                      bg-linear-to-br from-white/20  to-(--transparent-pill)/30
+                      rounded-3xl
+                      border-2 border-white/10
+                      '    
+        >
+          <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+            <Radio  size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Status
+          </h4>
+          <p className='flex items-center mt-3 font-(family-name:--hero-font) text-lg text-white'>
+            <div className="relative flex items-center justify-center w-3 h-3 mr-3">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-[#8ee3f7] opacity-75 animate-ping"></span>
+
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#8ee3f7]"></span>
+            </div>
+            Open To opportunities 
+          </p>
+          <p className='font-(family-name:--nav-font) text-xs text-white/50 mt-2'>Internships & frontend roles · Graduating 2026.</p>
+        </div>
       </div>
     </div>
   )

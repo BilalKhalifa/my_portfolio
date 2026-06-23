@@ -1,0 +1,8 @@
+#git-info > * {
+    transition: transform 0.3s ease;
+}
+
+#git-info > *:hover{
+    transform: translateY(-10px);
+    
+}
