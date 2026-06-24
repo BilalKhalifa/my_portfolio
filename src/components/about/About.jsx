@@ -1,4 +1,4 @@
-import { RiBardLine, RiStackLine } from '@remixicon/react'
+import { RiBardLine, RiStackLine, RiWrenchLine } from '@remixicon/react'
 import { Boxes, GitCommitHorizontal, GraduationCap, Icon, Radio } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { getContributions, getGithubUser } from '../../service'
@@ -73,7 +73,7 @@ const About = () => {
                               font-(family-name:--hero-font) text-5xl font-semibold 
                               [text-shadow:0_0_20px_rgba(147,230,245,0.5),0_0_40px_rgba(147,230,245,0.25)]'
             >
-              {githubData?.public_repos}+
+              {githubData?.public_repos ?? '--'}+
             </span>
             <span 
                 className=' inline-block 
@@ -103,7 +103,7 @@ const About = () => {
                               font-(family-name:--hero-font) text-5xl font-semibold 
                             '
             >
-              {contribution}
+              {contribution ?? '--'}
             </span>
             <span 
                 className=' inline-block 
@@ -197,6 +197,75 @@ const About = () => {
             })}
           </div>
         </div>
+      </section>
+      {/* Currently Learning */}
+      <section 
+              id='cur-learn' 
+              className='
+                          w-full
+                          flex flex-col p-6 
+                          backdrop-blur-2xl
+                          bg-linear-to-br from-white/20  to-(--transparent-pill)/30
+                          rounded-3xl
+                          border-2 border-white/10 
+                        '
+      >
+         <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+            <RiWrenchLine size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Currently Learning
+          </h4>
+          <div className='flex gap-4 w-full mt-7 '>
+              <div 
+                  className='
+                              flex flex-col
+                              w-1/3 backdrop-blur-2xl
+                              bg-white/1
+                              rounded-3xl
+                              border-2 border-white/10 
+                              p-3
+                             '
+              >
+                <span className='inline-block font-(family-name:--hero-font) text-lg font-medium text-white'>
+                  Next.js
+                </span>
+                <span className='inline-block mt-1 font-(family-name:--nav-font) text-[11px] text-white/50'>
+                  App Router • Server Components
+                </span>
+              </div>
+              <div 
+                  className='
+                              flex flex-col
+                              w-1/3 backdrop-blur-2xl
+                              bg-white/1
+                              rounded-3xl
+                              border-2 border-white/10 
+                              p-3
+                             '
+              >
+                <span className='inline-block font-(family-name:--hero-font) text-lg font-medium text-white'>
+                  TypeScript
+                </span>
+                <span className='inline-block mt-1 font-(family-name:--nav-font) text-[11px] text-white/50'>
+                  Type Safety • Better DX
+                </span>
+              </div>
+              <div 
+                  className='
+                             flex flex-col
+                              w-1/3 backdrop-blur-2xl
+                              bg-white/1
+                              rounded-3xl
+                              border-2 border-white/10 
+                              p-3
+                             '
+              >
+                <span className='inline-block font-(family-name:--hero-font) text-lg font-medium text-white'>
+                  GSAP & Motion
+                </span>
+                <span className='inline-block mt-1 font-(family-name:--nav-font) text-[11px] text-white/50'>
+                  Interactive UI • Cinematic Animation
+                </span>
+              </div>
+          </div>
       </section>
     </div>
   )
