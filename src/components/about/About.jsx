@@ -1,8 +1,9 @@
-import { RiBardLine } from '@remixicon/react'
-import { Boxes, GitCommitHorizontal, GraduationCap, Radio } from 'lucide-react'
+import { RiBardLine, RiStackLine } from '@remixicon/react'
+import { Boxes, GitCommitHorizontal, GraduationCap, Icon, Radio } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { getContributions, getGithubUser } from '../../service'
 import './about.css'
+import { techStack } from './techstack'
 
 const About = () => {
 
@@ -139,7 +140,7 @@ const About = () => {
         </div>
       </div>
       {/* Education & Tech */}
-      <section id="edu-info" className='flex gap-2 w-full '>
+      <section id="edu-info" className='flex gap-4 w-full '>
         {/* Education */}
         <div 
             className='
@@ -166,6 +167,36 @@ const About = () => {
           </div>
         </div>
         {/* Tect Stack */}
+        <div
+            className='
+                        flex flex-col w-1/2 p-6 
+                        backdrop-blur-2xl
+                        bg-linear-to-br from-white/20  to-(--transparent-pill)/30
+                        rounded-3xl
+                        border-2 border-white/10 
+                      '
+        >
+           <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+            <RiStackLine   size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Daily Stack
+          </h4>
+          <div className='flex flex-wrap gap-3 mt-4'>
+            {techStack.map((skills)=>{
+              const Icon = skills.icon
+              return(
+                    <div 
+                          key = {skills.label}
+                          className='
+                                      flex gap-2 items-center
+                                      w-fit h-fit px-2.5 py-1
+                                     text-white 
+                                      bg-white/10 border border-white/30 rounded-full'
+                    >
+                      <Icon size={25} color={skills.color} /><span className='font-(family-name:--nav-font) text-[11px]'>{skills.label}</span>
+                    </div>
+              )
+            })}
+          </div>
+        </div>
       </section>
     </div>
   )
