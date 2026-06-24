@@ -7,14 +7,20 @@ const CursorGlow = () => {
 
    useEffect(()=>{
 
-    window.addEventListener('mousemove',(e)=>{
-        gsap.to(glowRef.current,{
+    const handleMouseMove = (e) => {
+      gsap.to(glowRef.current,{
             x:e.clientX ,
             y:e.clientY ,
             duration:0.5,
             ease: "power3.out"
         })
-    })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
 
    },[])
 

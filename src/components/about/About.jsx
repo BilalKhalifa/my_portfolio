@@ -11,21 +11,24 @@ const About = () => {
   const [contribution, setContribution] = useState(null)
 
   useEffect(() => {
-  const fetchGithub = async () => {
-    try {
-      const [projects, contributions] = await Promise.all([
-        getGithubUser("BilalKhalifa"),
-        getContributions("BilalKhalifa"),
-      ]);
 
-      setGithubData(projects);
-      setContribution(contributions);
-      console.log(projects);
-      console.log(contribution);
-      
-      
-    } catch (err) {
-      console.log(err);
+  const [navigation] = performance.getEntriesByType('navigation');
+
+  const fetchGithub = async () => {
+    if(navigation && navigation.type === 'reload'){
+        try {
+        const [projects, contributions] = await Promise.all([
+          getGithubUser("BilalKhalifa"),
+          getContributions("BilalKhalifa"),
+        ]);
+
+        setGithubData(projects);
+        setContribution(contributions);
+        console.log('API fetched...')
+        
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 

@@ -17,7 +17,7 @@ const Hero = () => {
     const tl = gsap.timeline()
 
     tl.from(leftRef.current.children,{
-      y: 20,
+      y: 30,
       opacity:0,
       stagger: 0.15,
       duration:0.8
@@ -32,7 +32,7 @@ const Hero = () => {
   },[])
 
   return (
-    <div className='relative h-screen w-full pt-50 flex'>
+    <div className='relative h-full w-full pt-50 flex'>
         <div ref={leftRef} className="left flex flex-col items-start w-1/2 h-full pl-95">
             <div 
             
@@ -50,9 +50,9 @@ const Hero = () => {
               </div>
               Available • {new Date().getFullYear()}
             </div>
-            <div className='hero-title inline-block bg-linear-to-r from-[#f4f8f9] to-[#97ddf4] bg-clip-text text-transparent'>Engineering </div>
-            <div className='hero-title inline-block bg-linear-to-r from-[#f4f8f9] to-[#97ddf4] bg-clip-text text-transparent'>Digital </div>
-            <div className='hero-title inline-block bg-linear-to-r from-[#84e2fa] via-[#9dd7f7] to-[#b2a0fe] bg-clip-text text-transparent italic'>Experiences</div>
+            <div className='hero-title will-change-transform  bg-linear-to-r from-[#f4f8f9] to-[#97ddf4] bg-clip-text text-transparent'>Engineering </div>
+            <div className='hero-title will-change-transform bg-linear-to-r from-[#f4f8f9] to-[#97ddf4] bg-clip-text text-transparent'>Digital </div>
+            <div className='hero-title will-change-transform bg-linear-to-r from-[#84e2fa] via-[#9dd7f7] to-[#b2a0fe] bg-clip-text text-transparent italic'>Experiences</div>
             <div className='mt-7 font-[Montserrat] text-white/50 text-lg font-light '>
               <p>I'm <span className='font-bold text-white'>Bilal Khalifa</span> — a Computer Engineer and Full Stack Developer crafting interfaces that feel <span className='text-[#97E6F5]'>inevitable</span>: fast, elegant, considered to the pixel.
               </p>
@@ -77,7 +77,7 @@ const Hero = () => {
               <span className='h-px w-14 bg-white/30 inline-block'></span>
             </div>
         </div>
-        <div ref={rightRef} className="right w-1/2 h-full relative pl-50">
+        <div ref={rightRef} className="right will-change-transform w-1/2 h-full relative pl-50">
           <motion.div 
             animate={{rotate:360}}
             transition={{
