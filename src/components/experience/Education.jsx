@@ -1,17 +1,18 @@
 import React from 'react'
 import { timelineData } from './timelineData'
-
+import { GitHubCalendar } from 'react-github-calendar'
+import './education.css'
 const Education = () => {
   return (
     <div className='h-full flex flex-col gap-6 w-full bg-(--primary) px-75 py-45'>
       <div id="title" className='flex w-full items-center gap-3 '>
-        <span className='grow h-px bg-white/50'></span>
+        <span className='grow inline-block h-[0.5px] bg-linear-to-l from-[white]/30 to-[white]/0'></span>
         <span className='uppercase  text-white/50 font-(family-name:--nav-font) text-[10px] tracking-[3px] whitespace-nowrap shrink-0'>Academic Journey</span>
-        <span className='grow h-px bg-white/50'></span>
+        <span className='grow inline-block h-[0.5px] bg-linear-to-r from-[white]/30 to-[white]/0'></span>
       </div>
 
       {/* timeLine */}
-      <div className='relative mt-8'>
+      <div className='relative mt-16'>
         {/* Center Line */}
         <div className='absolute left-1/2 top-0 h-full w-px bg-linear-to-b from-[#4566ac] to-[#4566ac]/10' / >
 
@@ -41,6 +42,41 @@ const Education = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Git chart */}
+      <div className='relative mt-7 w-fit text-white backdrop-blur-2xl bg-white/20 p-8 rounded-3xl'>
+        <GitHubCalendar 
+          username='BilalKhalifa'
+          theme={{
+            light : [
+            '#1b1f2a',
+            '#48508d',
+            '#8175dc',
+            '#49afff',
+            '#64e2ff'
+          ],
+          dark : [
+            '#1b1f2a',
+            '#48508d',
+            '#8175dc',
+            '#49afff',
+            '#64e2ff'
+          ],
+
+        }} 
+        tooltips={{
+          activity: {
+            text: activity => `${activity.count} contibution on ${activity.date}`, 
+            placement: 'top',
+          }
+        }} 
+        blockRadius={4}
+        blockMargin={6}
+        blockSize={14}
+        showWeekdayLabels={true}
+        className='font-(family-name:--nav-font) text-white/50 uppercase text-xs'
+        />
       </div>
     </div>
   )

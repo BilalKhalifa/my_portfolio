@@ -1,0 +1,12 @@
+.react-activity-calendar__tooltip {
+    background-color: rgb(from var(--transparent-pill) r g b / 0.9);
+    font-family: var(--nav-font);
+    padding-block: 2px;
+    padding-inline: 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    
+}
