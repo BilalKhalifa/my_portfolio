@@ -2,6 +2,7 @@ import React from 'react'
 import { timelineData } from './timelineData'
 import { GitHubCalendar } from 'react-github-calendar'
 import './education.css'
+import { RiArrowRightLongLine, RiGithubLine } from '@remixicon/react'
 const Education = () => {
   return (
     <div className='h-full flex flex-col gap-6 w-full bg-(--primary) px-75 py-45'>
@@ -45,38 +46,63 @@ const Education = () => {
       </div>
 
       {/* Git chart */}
-      <div className='relative mt-7 w-fit text-white backdrop-blur-2xl bg-white/20 p-8 rounded-3xl'>
-        <GitHubCalendar 
-          username='BilalKhalifa'
-          theme={{
-            light : [
-            '#1b1f2a',
-            '#48508d',
-            '#8175dc',
-            '#49afff',
-            '#64e2ff'
-          ],
-          dark : [
-            '#1b1f2a',
-            '#48508d',
-            '#8175dc',
-            '#49afff',
-            '#64e2ff'
-          ],
+      <div id="git-contribution" className=' mt-7 flex flex-col gap-5'>
+        {/* Title */}
+        <h4 className='flex items-center gap-3 text-white/50 font-(family-name:--nav-font) uppercase tracking-[3px] text-[10px]!'>
+          <span className='inline-block bg-[#00D492] h-2 w-2 rounded-full'></span>// github · contributions
+        </h4>
+        {/* info */}
+        <div className='mt-7'>
+          <span className='bg-linear-to-r from-[#f3f7f8] to-[#8bd5f2] font-(family-name:--hero-font) text-6xl bg-clip-text text-transparent font-semibold'>Learning in</span>
+          <span className='bg-linear-to-r from-[#80defa] via-[#9adef5] to-[#b2a1fe] font-(family-name:--hero-font) text-6xl bg-clip-text text-transparent font-semibold italic'> Public</span>
 
-        }} 
-        tooltips={{
-          activity: {
-            text: activity => `${activity.count} contibution on ${activity.date}`, 
-            placement: 'top',
-          }
-        }} 
-        blockRadius={4}
-        blockMargin={6}
-        blockSize={14}
-        showWeekdayLabels={true}
-        className='font-(family-name:--nav-font) text-white/50 uppercase text-xs'
-        />
+          <div className='flex items-center justify-between mt-3'>
+            <p className='text-lg font-(family-name:--nav-font) text-white/50'>Daily commits, side projects, and college experiments — pushed to GitHub as I learn.</p>
+            <a 
+              href='https://github.com/BilalKhalifa'
+              className='
+                        flex gap-2 items-center
+                        bg-white-10 rounded-full border border-white/30 
+                        text-white/50 text-xs hover:text-white transition-colors duration-75 ease-in
+                        px-4 py-2
+                      '  
+              target='_blank'
+            ><RiGithubLine size={18} /> View on GitHub<RiArrowRightLongLine size={15} /></a>
+          </div>
+        </div>
+        {/* Calender */}
+        <div className='  mt-7 mx-auto w-fit left-1/2  text-white backdrop-blur-2xl bg-white/20 p-8 rounded-3xl'>
+          <GitHubCalendar
+            username='BilalKhalifa'
+            theme={{
+              light : [
+              '#1b1f2a',
+              '#48508d',
+              '#8175dc',
+              '#49afff',
+              '#64e2ff'
+            ],
+            dark : [
+              '#1b1f2a',
+              '#48508d',
+              '#8175dc',
+              '#49afff',
+              '#64e2ff'
+            ],
+          }}
+          tooltips={{
+            activity: {
+              text: activity => `${activity.count} contribution on ${activity.date}`,
+              placement: 'top',
+            }
+          }}
+          blockRadius={4}
+          blockMargin={6}
+          blockSize={14}
+          showWeekdayLabels={true}
+          className='font-(family-name:--nav-font) text-white/50 uppercase text-xs!'
+          />
+        </div>
       </div>
     </div>
   )
