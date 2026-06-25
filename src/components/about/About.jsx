@@ -24,7 +24,6 @@ const About = () => {
 
         setGithubData(projects);
         setContribution(contributions);
-        console.log('API fetched...')
         
       } catch (err) {
         console.log(err);
@@ -36,7 +35,7 @@ const About = () => {
 }, []);
 
   return (
-    <div className='h-full flex flex-col gap-6 w-full bg-(--primary) px-75 py-55'>
+    <div className='h-full flex flex-col gap-6 w-full bg-(--primary) px-75 pt-45 '>
       <div 
           className='
                       flex gap-2
@@ -222,7 +221,7 @@ const About = () => {
                               flex flex-col
                               w-1/3 backdrop-blur-2xl
                               bg-white/1
-                              rounded-3xl
+                              rounded-2xl
                               border-2 border-white/10 
                               p-3
                              '
@@ -239,7 +238,7 @@ const About = () => {
                               flex flex-col
                               w-1/3 backdrop-blur-2xl
                               bg-white/1
-                              rounded-3xl
+                              rounded-2xl
                               border-2 border-white/10 
                               p-3
                              '
@@ -256,7 +255,7 @@ const About = () => {
                              flex flex-col
                               w-1/3 backdrop-blur-2xl
                               bg-white/1
-                              rounded-3xl
+                              rounded-2xl
                               border-2 border-white/10 
                               p-3
                              '

@@ -8,7 +8,7 @@ import Work from './components/work/Work'
 import Skills from './components/skills/Skills'
 import Resume from './components/resume/Resume'
 import Contact from './components/contact/Contact'
-import Education from './components/experience/Experience'
+import Education from './components/experience/Education'
 import About from './components/about/About'
 
 const App = () => {
@@ -19,6 +19,10 @@ const App = () => {
       lerp: 0.1,
       smoothWheel: true
     })
+
+    return () => {
+      lenis.destroy()
+    }
   }, [])
 
   return (
