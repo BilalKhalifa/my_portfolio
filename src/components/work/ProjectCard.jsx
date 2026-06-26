@@ -1,17 +1,18 @@
+import { RiExternalLinkLine, RiGithubLine } from '@remixicon/react';
 import Tilt from 'react-parallax-tilt';
 
 const ProjectCard = ({ project }) => {
   return (
     <Tilt
          tiltReverse={true}
-         tiltMaxAngleX={4}
-         tiltMaxAngleY={4}
-         glareEnable={true}
-         glareMaxOpacity={0.45}
+         tiltMaxAngleX={2}
+         tiltMaxAngleY={2}
+         glareEnable={false}
+        //  glareMaxOpacity={0.45}
          perspective={500}
          scale={1.02}
     >
-        <article className='overflow-hidden rounded-3xl border border-white/50 bg-blue-950/30 backdrop-blur-lg'>
+        <article className=' group cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-blue-950/30 backdrop-blur-lg'>
             {/* Image */}
             <div className='relative h-80 overflow-hidden rounded-t-3xl'>
                 <img 
@@ -29,9 +30,44 @@ const ProjectCard = ({ project }) => {
                                 }
                         `}
                 />
+
+                <div 
+                    className='absolute bottom-4 right-4 flex gap-3 opacity-0 transition-all duration-300 group-hover:opacity-100 '
+                    data-tilt-transform
+                    
+                >
+                    <a 
+                        target='_blank'
+                        href={project.github}
+                        className='
+                                    flex gap-2 items-center
+                                    bg-white/6 
+                                    text-xs font-medium text-white font-(family-name:--nav-font)
+                                    rounded-full border border-white/30
+                                    py-2 px-3
+                                  '
+                    >
+                        <RiGithubLine size={15} /> Code
+                    </a>
+                    {project.live && (
+                        <a 
+                            target='_blank'
+                            href={project.live}
+                            className='
+                                        flex gap-2 items-center
+                                        bg-linear-to-r from-[#82d8fb] to-[#ac96ff]
+                                        text-xs font-medium text-black font-(family-name:--nav-font)
+                                        rounded-full 
+                                        py-2 px-3
+                                    '
+                    >
+                        <RiExternalLinkLine size={15} />Live
+                    </a>
+                    )}
+                </div>
             </div>
 
-            {/* Content */}
+            {/* Content */} 
             <div className='p-7'>
                 <h4 className='text-[10px] tracking-[2.2px] text-[#97E6F5] font-(family-name:--nav-font)'>{project.category}</h4>
                 <h2 className='mt-2 text-2xl font-(family-name:--hero-font) font-medium text-white'>{project.title}</h2>

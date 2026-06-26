@@ -29,9 +29,11 @@ const Work = () => {
         {/* Project-card */}
         <div className='relative mt-7'>
           <Swiper 
+                className='projects-swiper'
                 grabCursor
                 spaceBetween={16}
-                slidesPerView={2.2}
+                slidesPerView={2.15}
+                speed={700}
           >
             {projects.map((project)=>(
               <SwiperSlide key={project.id} className='my-2 mx-4'>
@@ -39,11 +41,6 @@ const Work = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-(--primary) to-transparent" />
-
-    {/* Right Fade */}
-    <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-(--primary) to-transparent" />
         </div>
     </div>
   )
