@@ -37,6 +37,37 @@ export const projects = [
 
     {
         id: 2,
+        title: "Developer Portfolio",
+        slug: "developer-portfolio",
+
+        category: "Frontend",
+        type: "Original",
+        status: "In Progress",
+
+        year: "2026",
+        featured: true,
+
+        description:
+            "A modern, interactive developer portfolio showcasing my projects, technical skills, and journey through immersive animations, responsive design, and contemporary web technologies.",
+
+        image: portfolio,
+
+        techStack: [
+            "React",
+            "Tailwind CSS",
+            "GSAP",
+            "Framer Motion",
+            "Swiper.js",
+            "Vite"
+        ],
+
+        github: "https://github.com/BilalKhalifa/my_portfolio",
+
+        live: null,
+    },
+
+    {
+        id: 3,
         title: "K72 Clone",
         slug: "k72-clone",
 
@@ -66,7 +97,7 @@ export const projects = [
     },
 
     {
-        id: 3,
+        id: 4,
         title: "CodeSync",
         slug: "codesync",
 
@@ -97,8 +128,9 @@ export const projects = [
         live: null,
     },
 
+    
     {
-        id: 4,
+        id: 5,
         title: "TubeLens",
         slug: "tubelens",
 
@@ -128,37 +160,6 @@ export const projects = [
         imageFit: "contain",
 
         github: "https://github.com/BilalKhalifa/tube_lens_frontend",
-
-        live: null,
-    },
-
-    {
-        id: 5,
-        title: "Developer Portfolio",
-        slug: "developer-portfolio",
-
-        category: "Frontend",
-        type: "Original",
-        status: "In Progress",
-
-        year: "2026",
-        featured: true,
-
-        description:
-            "A modern, interactive developer portfolio showcasing my projects, technical skills, and journey through immersive animations, responsive design, and contemporary web technologies.",
-
-        image: portfolio,
-
-        techStack: [
-            "React",
-            "Tailwind CSS",
-            "GSAP",
-            "Framer Motion",
-            "Swiper.js",
-            "Vite"
-        ],
-
-        github: "https://github.com/BilalKhalifa/my_portfolio",
 
         live: null,
     }

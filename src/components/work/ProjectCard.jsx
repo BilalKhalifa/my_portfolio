@@ -12,13 +12,14 @@ const ProjectCard = ({ project }) => {
          perspective={500}
          scale={1.02}
     >
-        <article className=' group cursor-pointer overflow-hidden rounded-3xl border border-white/50 bg-blue-950/30 backdrop-blur-lg'>
+        <article className=' group cursor-pointer overflow-hidden rounded-3xl border border-gray-400 bg-blue-950/30 backdrop-blur-lg'>
             {/* Image */}
             <div className='relative h-80 overflow-hidden rounded-t-3xl'>
                 <img 
                     src={project.image}
                     alt={project.title}
                     className={`
+                                group-hover:scale-110
                                 h-full w-full
                                 transition-transform duration-300
                                 border-b border-white/30
@@ -69,7 +70,7 @@ const ProjectCard = ({ project }) => {
 
             {/* Content */} 
             <div className='p-7'>
-                <h4 className='text-[10px] tracking-[2.2px] text-[#97E6F5] font-(family-name:--nav-font)'>{project.category}</h4>
+                <h4 className='text-[10px] tracking-[2.2px] text-[#97E6F5] font-(family-name:--nav-font)'>{project.category} · {project.status}</h4>
                 <h2 className='mt-2 text-2xl font-(family-name:--hero-font) font-medium text-white'>{project.title}</h2>
                 <p className='mt-3 text-sm font-(family-name:--nav-font) text-white/50'>{project.description}</p>
 
