@@ -1,0 +1,26 @@
+#git-info > * {
+    transition: transform 0.3s ease;
+}
+
+#git-info > *:hover{
+    transform: translateY(-10px);
+    
+}
+
+#edu-info > * {
+    transition: transform 0.3s ease;
+}
+
+#edu-info > *:hover{
+    transform: translateY(-10px);
+    
+}
+
+#cur-learn{
+    transition: transform 0.3s ease;
+}
+
+#cur-learn:hover{
+    transform: translateY(-10px);
+    
+}

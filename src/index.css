@@ -19,6 +19,13 @@
     --transparent-pill : #0b4574;
 }
 
+@theme {
+    --font-nav: 'Montserrat', sans-serif;
+    --font-hero:'SpaceGrotesk', sans-serif;
+    --color-primary: #040711;
+    --color-transparent-pill: #0b4574;
+}
+
 body{
     height: 100vh;
     width: 100%;

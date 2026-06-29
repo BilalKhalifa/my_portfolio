@@ -2,6 +2,7 @@ import React from 'react'
 import './navbar.css'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/all'
+import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -19,11 +20,14 @@ const Navbar = () => {
     const path = id === 'hero' ? '/' : `/${id}`
     window.history.replaceState({}, "", path)
 
-    gsap.to(window, {
-      duration: 1,
-      scrollTo: `#${id}`,
-      ease: "power3.inOut"
-    })
+
+    useGSAP(()=>{
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: `#${id}`,
+        ease: "power3.inOut"
+      })
+    }, {dependencies: [id], revertOnUpdate: true})
   }
 
   return (
