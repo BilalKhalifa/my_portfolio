@@ -31,3 +31,12 @@ body{
     width: 100%;
     background-color: var(--primary);
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
