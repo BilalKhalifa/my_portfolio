@@ -30,6 +30,7 @@ const CursorGlow = () => {
         className='
                     fixed w-40 h-40 rounded-full blur-[120px] bg-[#072e4e]
                     top-0 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-none
+                    z-50
                   '
     >
     </div>

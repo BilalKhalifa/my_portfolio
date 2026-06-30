@@ -1,7 +1,12 @@
 import { RiBardLine, RiExternalLinkLine } from '@remixicon/react'
 import { Download } from 'lucide-react'
+import {DownloadIcon,ExternalLinkIcon} from '../../ui/hoverIcon'
+import { useRef } from 'react'
 
 const Resume = () => {
+
+  const downloadRef = useRef(null)
+  const externalLinkRef = useRef(null)
 
   const items = [
     "Built responsive web apps using React.js & Tailwind CSS",
@@ -63,11 +68,19 @@ const Resume = () => {
                               font-nav text-sm!  font-medium 
                             '
             >
-              <button className='flex items-center gap-2 text-black bg-white rounded-full px-6 py-3'>
-                <Download size={18} />Download Resume
+              <button 
+                      onMouseEnter={()=>downloadRef.current?.startAnimation()}
+                      onMouseLeave={()=>downloadRef.current?.stopAnimation()}
+
+                      className='flex items-center gap-2 text-black bg-white rounded-full px-6 py-3'>
+                <DownloadIcon size={18} ref={downloadRef}/>Download Resume
               </button>
-              <button className='flex items-center gap-2 bg-white/4 border border-white/10 rounded-full px-6 py-3 text-white'>
-                Preview<RiExternalLinkLine size={18} />
+              <button 
+                      onMouseEnter={()=>externalLinkRef.current?.startAnimation()}
+                      onMouseLeave={()=>externalLinkRef.current?.stopAnimation()}
+
+                      className='flex items-center gap-2 bg-white/4 border border-white/10 rounded-full px-6 py-3 text-white'>
+                Preview<ExternalLinkIcon size={18} ref={externalLinkRef}/>
               </button>
             </div>
           </div>

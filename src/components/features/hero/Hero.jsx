@@ -32,7 +32,7 @@ const Hero = () => {
   },[])
 
   return (
-    <div className='relative h-full w-full pt-50 flex'>
+    <div className='relative h-full w-full pt-50 flex bg-primary'>
         <div ref={leftRef} className="left flex flex-col items-start w-1/2 h-full pl-95">
             <div 
             

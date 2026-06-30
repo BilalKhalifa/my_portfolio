@@ -3,7 +3,8 @@ import Hero from './components/features/hero/Hero'
 import Navbar from './components/navbar/Navbar'
 import Scroller from './components/Scroller'
 import Lenis from 'lenis'
-import CursorGlow from './components/ui/CursorGlow'
+import CursorGlow from './components/CursorGlow'
+
 
 const About = lazy(()=> import('./components/features/about/About'))
 const Education = lazy(()=> import('./components/features/experience/Education'))

@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
 
 @font-face {
     font-family: 'Montserrat';
@@ -15,7 +20,7 @@
 :root{
     --nav-font: 'Montserrat', sans-serif;
     --hero-font: 'SpaceGrotesk', sans-serif;
-    --primary : #040711;
+    --primary: #040711;
     --transparent-pill : #0b4574;
 }
 
