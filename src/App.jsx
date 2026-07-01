@@ -30,12 +30,12 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <Scroller />
       <CursorGlow />
       <section id="hero">
         <Hero />
       </section>
       <Suspense fallback = {<div className='h-screen flex items-center justify-center bg-primary text-white/50'> Loading...</div>}>
+        <Scroller />
         <section id="about">
           <About />
         </section>
