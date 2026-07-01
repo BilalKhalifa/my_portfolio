@@ -1,5 +1,4 @@
-import { RiBardLine, RiExternalLinkLine } from '@remixicon/react'
-import { Download } from 'lucide-react'
+import { RiBardLine } from '@remixicon/react'
 import {DownloadIcon,ExternalLinkIcon} from '../../ui/hoverIcon'
 import { useRef } from 'react'
 
