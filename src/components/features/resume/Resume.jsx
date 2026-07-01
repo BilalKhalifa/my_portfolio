@@ -68,20 +68,23 @@ const Resume = () => {
                               font-nav text-sm!  font-medium 
                             '
             >
-              <button 
+              <a 
                       onMouseEnter={()=>downloadRef.current?.startAnimation()}
                       onMouseLeave={()=>downloadRef.current?.stopAnimation()}
-
-                      className='flex items-center gap-2 text-black bg-white rounded-full px-6 py-3'>
+                      href="/Bilal_Khalifa_Resume.pdf"
+                      download={"Bilal_Khalifa_Resume.pdf"}
+                      className='flex items-center gap-2 text-black bg-white rounded-full px-6 py-3 cursor-pointer'
+              >
                 <DownloadIcon size={18} ref={downloadRef}/>Download Resume
-              </button>
-              <button 
+              </a>
+              <a 
                       onMouseEnter={()=>externalLinkRef.current?.startAnimation()}
                       onMouseLeave={()=>externalLinkRef.current?.stopAnimation()}
-
+                      href="/Bilal_Khalifa_Resume.pdf"
+                      target='_blank'
                       className='flex items-center gap-2 bg-white/4 border border-white/10 rounded-full px-6 py-3 text-white'>
                 Preview<ExternalLinkIcon size={18} ref={externalLinkRef}/>
-              </button>
+              </a>
             </div>
           </div>
           {/* right */}
