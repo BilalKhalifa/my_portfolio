@@ -37,11 +37,16 @@ body{
     background-color: var(--primary);
 }
 
-.no-scrollbar {
+/* .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+} */
+
+::selection{
+    background-color: #AFABFD;
+    color: #fff;
 }

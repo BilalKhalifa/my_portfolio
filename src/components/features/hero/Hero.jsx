@@ -1,5 +1,6 @@
 import { useGSAP } from '@gsap/react'
-import { RiArrowRightUpLine, RiBardLine, RiCpuLine, RiMailLine, RiMapPinLine } from '@remixicon/react'
+import {  RiBardLine, RiCpuLine, RiMailLine, RiMapPinLine } from '@remixicon/react'
+import { ArrowNarrowUpDashedIcon, MailFilledIcon } from '../../../components/ui/hoverIcon'
 import gsap from 'gsap'
 import { Mail } from 'lucide-react'
 import { motion } from "motion/react"
@@ -11,6 +12,8 @@ const Hero = () => {
 
   const leftRef = useRef()
   const rightRef = useRef()
+  const arrowRef = useRef(null)
+  const mailRef = useRef(null)
 
   useGSAP(()=>{
 
@@ -59,16 +62,21 @@ const Hero = () => {
             </div>
             <div className='flex gap-5 mt-5 text-sm font-[Montserrat] font-medium items-center '>
                 <button 
-                className='bg-white flex gap-2 rounded-full  py-3 px-6 items-center cursor-pointer'
-                >Explore Projects <RiArrowRightUpLine className='size-4.5' />
+                        className='bg-white flex gap-2 rounded-full  py-3 px-6 items-center cursor-pointer'
+                        onMouseEnter={()=>arrowRef.current?.startAnimation()}
+                        onMouseLeave={()=>arrowRef.current?.stopAnimation()}
+                >
+                  Explore Projects <ArrowNarrowUpDashedIcon className='size-5 rotate-45' ref={arrowRef}/>
                 </button>
                 <button 
                   className='flex gap-3
-                   text-white items-center 
-                     border border-white/10 rounded-full
-                   bg-white/5 py-3 px-6 cursor-pointer'
+                  text-white items-center 
+                    border border-white/10 rounded-full
+                  bg-white/5 py-3 px-6 cursor-pointer tracking-widest'
+                  onMouseEnter={()=>mailRef.current?.startAnimation()}
+                  onMouseLeave={()=>mailRef.current?.stopAnimation()}
                 >
-                  Get in touch <Mail />
+                  Get in touch <MailFilledIcon className='size-7' ref={mailRef}/>
                 </button>
             </div>
             <div className='font-[Montserrat] text-white/50 mt-12 text-[10px] tracking-[3px] flex items-center gap-4'>
