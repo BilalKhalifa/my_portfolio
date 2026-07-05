@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/fetch-github-data.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -18,6 +19,7 @@
     "axios": "^1.18.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.4.2",
     "gsap": "^3.15.0",
     "lenis": "^1.3.23",
     "lucide-react": "^1.22.0",

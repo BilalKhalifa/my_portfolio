@@ -1,8 +1,7 @@
 import { useGSAP } from '@gsap/react'
-import {  RiBardLine, RiCpuLine, RiMailLine, RiMapPinLine } from '@remixicon/react'
+import {  RiBardLine, RiCpuLine, RiMapPinLine } from '@remixicon/react'
 import { ArrowNarrowUpDashedIcon, MailFilledIcon } from '../../../components/ui/hoverIcon'
 import gsap from 'gsap'
-import { Mail } from 'lucide-react'
 import { motion } from "motion/react"
 import { useRef } from 'react'
 import './hero.css'

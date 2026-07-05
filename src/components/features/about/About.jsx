@@ -1,61 +1,10 @@
 import { RiBardLine, RiStackLine, RiWrenchLine } from '@remixicon/react'
-import { Boxes, GitCommitHorizontal, GraduationCap, Icon, Radio } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
-import { getContributions, getGithubUser } from '../../../service'
+import { Boxes, GitCommitHorizontal, GraduationCap, Radio } from 'lucide-react'
 import './about.css'
 import { techStack } from '../../../data/techstack'
+import githubStats from '@/data/github-stats.json'
 
 const About = () => {
-
-  const [githubData, setGithubData] = useState(null)
-  const [contribution, setContribution] = useState(null)
-
-  const CACHE_KEY = 'github_stats'
-  const CACHE_DURATION = 1000 * 60 * 60 * 12
-
-  useEffect(() => {
-
-  const fetchGithub = async () => {
-    
-    try{
-      const cached = localStorage.getItem(CACHE_KEY)
-      if(cached){
-        const { timestamp, data } = JSON.parse(cached)
-
-        if(Date.now() - timestamp < CACHE_DURATION){
-          setGithubData(data.githubData)
-          setContribution(data.contribution)
-          return;
-        }
-      }
-
-      const [projects, contribution] = await Promise.all([
-        getGithubUser('BilalKhalifa'),
-        getContributions('BilalKhalifa')
-      ])
-
-      const freshData = {
-        githubData : projects,
-        contribution: contribution
-      }
-
-      localStorage.setItem(CACHE_KEY,
-        JSON.stringify({
-          timestamp: Date.now(),
-          data: freshData
-        })
-      )
-
-      setGithubData(projects)
-      setContribution(contribution)
-
-    }
-    catch(err){
-      console.log(err)
-    }
-  }
-  fetchGithub();
-}, []);
 
   return (
     <div className='h-full flex flex-col gap-6 w-full bg-(--primary) px-75 pt-45 '>
@@ -98,7 +47,7 @@ const About = () => {
                               font-(family-name:--hero-font) text-5xl font-semibold 
                               [text-shadow:0_0_20px_rgba(147,230,245,0.5),0_0_40px_rgba(147,230,245,0.25)]'
             >
-              {githubData?.public_repos ?? '--'}+
+              {githubStats.publicRepos ?? '--'}+
             </span>
             <span 
                 className=' inline-block 
@@ -128,7 +77,7 @@ const About = () => {
                               font-(family-name:--hero-font) text-5xl font-semibold 
                             '
             >
-              {contribution ?? '--'}
+              {githubStats.contribution ?? '--'}
             </span>
             <span 
                 className=' inline-block 
@@ -201,7 +150,7 @@ const About = () => {
                         border-2 border-white/10 
                       '
         >
-           <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+          <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
             <RiStackLine   size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Daily Stack
           </h4>
           <div className='flex flex-wrap gap-3 mt-4'>
@@ -213,8 +162,8 @@ const About = () => {
                           className='
                                       flex gap-2 items-center
                                       w-fit h-fit px-2.5 py-1
-                                     text-white 
-                                      bg-white/10 border border-white/30 rounded-full'
+                                    text-white 
+                                    bg-white/10 border border-white/30 rounded-full'
                     >
                       <Icon size={25} color={skills.color} /><span className='font-(family-name:--nav-font) text-[11px]'>{skills.label}</span>
                     </div>
@@ -235,7 +184,7 @@ const About = () => {
                           border-2 border-white/10 
                         '
       >
-         <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
+          <h4 className='font-(family-name:--nav-font) text-white/50 text-[10px] flex gap-4 items-center uppercase tracking-[2.5px]'>
             <RiWrenchLine size={25} className='text-[#97E6F5] bg-white/20 rounded-full p-1'/> Currently Learning
           </h4>
           <div className='flex gap-4 w-full mt-7 '>
@@ -247,7 +196,7 @@ const About = () => {
                               rounded-2xl
                               border-2 border-white/10 
                               p-3
-                             '
+                            '
               >
                 <span className='inline-block font-(family-name:--hero-font) text-lg font-medium text-white'>
                   Next.js
@@ -264,7 +213,7 @@ const About = () => {
                               rounded-2xl
                               border-2 border-white/10 
                               p-3
-                             '
+                            '
               >
                 <span className='inline-block font-(family-name:--hero-font) text-lg font-medium text-white'>
                   TypeScript
@@ -275,13 +224,13 @@ const About = () => {
               </div>
               <div 
                   className='
-                             flex flex-col
+                              flex flex-col
                               w-1/3 backdrop-blur-2xl
                               bg-white/1
                               rounded-2xl
                               border-2 border-white/10 
                               p-3
-                             '
+                            '
               >
                 <span className='inline-block font-(family-name:--hero-font) text-lg font-medium text-white'>
                   GSAP & Motion
