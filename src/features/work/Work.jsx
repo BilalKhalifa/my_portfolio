@@ -30,9 +30,24 @@ const Work = () => {
           <Swiper 
                 className='projects-swiper'
                 grabCursor
-                spaceBetween={16}
-                slidesPerView={2.15}
                 speed={700}
+                breakpoints={{
+                  // Mobile screens
+                  320: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 12
+                  },
+                  // Tablets
+                  768: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 16
+                  },
+                  // Desktops
+                  1024: {
+                    slidesPerView: 2.15,
+                    spaceBetween: 16
+                  }
+                }}
           >
             {projects.map((project)=>(
               <SwiperSlide key={project.id} className='my-2 mx-4'>

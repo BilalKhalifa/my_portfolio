@@ -1,5 +1,5 @@
-import { motion, scale } from 'motion/react'
-import React from 'react'
+import { motion } from 'motion/react'
+
 
 const TechIcon = ({tool}) => {
   const Icon = tool.icon
@@ -13,7 +13,7 @@ const TechIcon = ({tool}) => {
       }}
       transition = {{
         type:'spring',
-        stifness: 300,
+        stiffness: 300,
         damping: 18
       }}
 
@@ -21,7 +21,7 @@ const TechIcon = ({tool}) => {
                     group flex flex-col
                     items-center gap-4
                     cursor-pointer  
-                 '
+                  '
     >
       <div 
           className='

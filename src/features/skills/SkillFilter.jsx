@@ -1,4 +1,3 @@
-import React from 'react'
 import { toolkit } from '../../data/toolkit'
 
 const SkillFilter = ({ selectCategory, setSelectCategory }) => {
@@ -31,11 +30,10 @@ const SkillFilter = ({ selectCategory, setSelectCategory }) => {
         >
           <button
                   onClick={ () => setSelectCategory(category.id)}
-                  key={category.id}
                   className={`
                               py-1.5 px-3
                               text-[10px] font-(family-name:--nav-font) tracking-[2.2px] font-medium uppercase
-                              border rounded-full transition-all duration-300 bg-(--primary)
+                              border rounded-full transition-all duration-300 bg-primary
                               ${
                                 selectCategory === category.id
                                 ? 'text-[#08cbc5] border-transparent '

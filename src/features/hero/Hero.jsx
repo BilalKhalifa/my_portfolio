@@ -105,8 +105,9 @@ const Hero = () => {
             ease: "easeInOut"
           }}
           className='
-                          z-10 absolute border-2 border-white/10 h-135 w-97.5 rounded-4xl
-                          backdrop-blur-4xl bg-(--transparent-pill)/20'
+                          will-change-transform antialiased backface-hidden
+                          z-20 absolute border-2 border-white/10 h-135 w-97.5 rounded-4xl
+                          backdrop-blur-4xl bg-transparent-pill/20'
         >
             <div className="profile w-85.25 h-108 m-5 
                             rounded-4xl overflow-hidden
