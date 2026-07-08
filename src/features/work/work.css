@@ -1,4 +1,7 @@
 .projects-swiper {
+
+    overflow: visible !important;
+
     mask-image: linear-gradient(
         to right,
         transparent,
