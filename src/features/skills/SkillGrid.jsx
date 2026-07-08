@@ -5,7 +5,7 @@ const SkillGrid = ({ selectCategory }) => {
 
   
   return (
-    <div className='grid grid-cols-3 gap-8'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
         {toolkit.map((category) => {
               const isActive = selectCategory === 'all' || selectCategory === category.id
               return (

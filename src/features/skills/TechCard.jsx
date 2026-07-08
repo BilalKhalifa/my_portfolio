@@ -1,16 +1,15 @@
-import React from 'react'
 import TechIcon from './TechIcon'
 
 const TechCard = ({category, className=''}) => {
 
   const colSpan={
     1: 'col-span-1',
-    2: 'col-span-2'
+    2: 'col-span-1 md:col-span-2'
   }
 
   const rowSpan = {
     1: 'row-span-1',
-    2: 'row-span-2'
+    2: 'row-span-1 md:row-span-2'
   }
 
   return (
@@ -25,7 +24,7 @@ const TechCard = ({category, className=''}) => {
                     bg-(--primary)/60
                     backdrop-blur-xl
 
-                    p-8 min-h-80
+                    p-5 md:p-8 min-h-80
 
                     transition-all duration-500
                   `}
@@ -59,7 +58,7 @@ const TechCard = ({category, className=''}) => {
         {/* Icons */}
         <div
             className='
-                        mt-14 flex flex-wrap gap-8
+                        mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-8 justify-between md:justify-start
                       '
         >
             {category.tools.map((tool)=>(

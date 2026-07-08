@@ -16,14 +16,13 @@ const Skills = () => {
       <h2 
           className='
                       mt-7 
-                      font-semibold text-6xl font-(family-name:--hero-font)
-                      
+                      font-semibold text-4xl md:text-6xl font-hero
                     '
       >
         <span className='bg-linear-to-r from-[#edf1f8] to-[#98ddf3] bg-clip-text text-transparent'>My everyday</span> 
         <span className='italic bg-linear-to-r from-[#80defa] via-[#99e0f5] to-[#b3a0fe] bg-clip-text text-transparent'> arsenal.</span>
       </h2>
-      <h3 className='mt-5 font-(family-name:--nav-font) text-lg text-white/50'>
+      <h3 className='mt-5 font-nav text-base md:text-lg text-white/50'>
         The technologies I use to build modern, fast and scalable web applications.<br />and Mobile application
       </h3>
       {/* Tech-Stack */}
