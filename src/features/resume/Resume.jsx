@@ -27,7 +27,7 @@ const Resume = () => {
       </h1>
       <h2 className='
                       mt-5 
-                      text-6xl font-hero font-semibold
+                      text-4xl md:text-6xl font-hero font-semibold
                       text-transparent
                     '
       >
@@ -45,7 +45,7 @@ const Resume = () => {
                         border border-white/10  
                       '
       >
-        <div className='grid grid-cols-2 items-center gap-10 '>
+        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 '>
           {/* left */}
           <div className=' h-full flex flex-col items-start justify-center font-nav my-auto'>
             <h5 className='text-[10px] tracking-[2.2px] text-[#97E6F5] uppercase'>
@@ -63,8 +63,9 @@ const Resume = () => {
               ))}
             </ul>
             <div className='
-                              mt-9 flex gap-3
-                              font-nav text-sm!  font-medium 
+                              mt-9 flex flex-col sm:flex-row gap-3
+                              font-nav text-sm! font-medium
+                              w-full sm:w-fit 
                             '
             >
               <a 
@@ -72,7 +73,7 @@ const Resume = () => {
                       onMouseLeave={()=>downloadRef.current?.stopAnimation()}
                       href="/Bilal_Khalifa_Resume.pdf"
                       download={"Bilal_Khalifa_Resume.pdf"}
-                      className='flex items-center gap-2 text-black bg-white rounded-full px-6 py-3 cursor-pointer'
+                      className='flex items-center justify-center gap-2 text-black bg-white rounded-full px-6 py-3 cursor-pointer w-full sm:w-auto'
               >
                 <DownloadIcon size={18} ref={downloadRef}/>Download Resume
               </a>
@@ -81,13 +82,13 @@ const Resume = () => {
                       onMouseLeave={()=>externalLinkRef.current?.stopAnimation()}
                       href="/Bilal_Khalifa_Resume.pdf"
                       target='_blank'
-                      className='flex items-center gap-2 bg-white/4 border border-white/10 rounded-full px-6 py-3 text-white'>
+                      className='flex items-center justify-center gap-2 bg-white/4 border border-white/10 rounded-full px-6 py-3 text-white w-full sm:w-auto'>
                 Preview<ExternalLinkIcon size={18} ref={externalLinkRef}/>
               </a>
             </div>
           </div>
           {/* right */}
-          <div className='relative h-200 rounded-2xl border border-white/10 bg-white-5 overflow-hidden'>
+          <div className='relative h-[600px] lg:h-200 rounded-2xl border border-white/10 bg-white-5 overflow-hidden hidden lg:block'>
               <div 
                   className='absolute top-0 left-0 right-0 z-10 px-4 py-2  bg-black/40 backdrop-blur-md border-b border-white/10'
               >
