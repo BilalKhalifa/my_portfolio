@@ -2,11 +2,25 @@ import { Calendar, Mail, MapPin, Phone, Sparkles } from 'lucide-react'
 import ContactInfoCard from './ContactInfoCard'
 import SocialMediaCard from './SocialMediaCard'
 import { RiGithubFill, RiInstagramLine, RiLinkedinFill } from '@remixicon/react'
+import toast from 'react-hot-toast'
 
 const Contact = () => {
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText('+919313561992')
+    toast.success('Phone number copied', {
+      icon: '📋'
+    })
+  }
+
+  const handleEmailClick = () => {
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=khalifabilal109@gmail.com', '_blank')
+  }
+
+
   return (
-    <div className='min-h-screen w-full bg-primary px-6 py-20 md:px-16 md:py-32 xl:px-74 xl:py-45 flex flex-col justify-center'>
-      <h1 className='flex gap-3 text-[10px] tracking-[3px] uppercase text-white/50'>
+    <div className='min-h-screen w-full bg-primary px-6 pt-32 pb-16 md:px-16 md:py-32 xl:px-74 xl:py-45 flex flex-col lg:justify-center'>
+      <h1 className='flex gap-3 text-[10px] font-nav tracking-[3px] uppercase text-white/50'>
         <Sparkles size={15} color='#97E6F5'/>Contact Me
       </h1>
       <div className=' mt-7 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0'>
@@ -30,11 +44,13 @@ const Contact = () => {
               icon={<Phone size={20} />}
               title='Phone'
               value='+91 93135 61992'
+              onClick={handleCopyPhone}
             />
             <ContactInfoCard
               icon={<Mail size={20} />}
               title='Email'
               value='khalifabilal109@gmail.com'
+              onClick={handleEmailClick}
             />
             <ContactInfoCard
               icon={<Calendar size={20} />}

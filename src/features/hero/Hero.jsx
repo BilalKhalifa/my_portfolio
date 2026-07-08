@@ -35,13 +35,13 @@ const Hero = () => {
 
   return (
     <div className='
-                    relative h-full w-full pt-28 md:pt-50 flex flex-col-reverse md:flex-row
-                  bg-primary gap-12 md:gap-0 pb-16 md:pb-0
+                    relative h-full w-full overflow-hidden pt-28 lg:pt-50 flex flex-col-reverse lg:flex-row
+                  bg-primary gap-12 lg:gap-0 pb-16 lg:pb-0
                   '
     >
       {/* Left Container */}
         <div ref={leftRef} 
-            className="left flex flex-col items-start w-full md:w-1/2 h-full px-6 md:pl-20 xl:pl-95">
+            className="left flex flex-col items-start w-full lg:w-1/2 h-full px-6 lg:pl-20 xl:pl-95">
             <div 
             
             className='
@@ -60,7 +60,7 @@ const Hero = () => {
             </div>
             <div 
                 className='
-                            font-hero text-5xl md:text-[104px] leading-tight md:leading-[110px]
+                            font-hero text-5xl md:text-6xl lg:text-7xl xl:text-[104px] leading-tight md:leading-[70px] lg:leading-[110px]
                             font-semibold  text-transparent
                             bg-linear-to-r from-[#f4f8f9] to-[#97ddf4] bg-clip-text 
                           '
@@ -69,7 +69,7 @@ const Hero = () => {
             </div>
             <div 
                 className='
-                            font-hero text-5xl md:text-[104px] leading-tight md:leading-[110px]
+                            font-hero text-5xl md:text-6xl lg:text-7xl xl:text-[104px] leading-tight md:leading-[70px] lg:leading-[110px]
                             font-semibold  text-transparent
                             bg-linear-to-r from-[#f4f8f9] to-[#97ddf4] bg-clip-text
                           '
@@ -77,7 +77,7 @@ const Hero = () => {
               Digital 
             </div>
             <div className='
-                            font-hero text-5xl md:text-[104px] leading-tight md:leading-[110px]
+                            font-hero text-5xl md:text-6xl lg:text-7xl xl:text-[104px] leading-tight md:leading-[70px] lg:leading-[110px]
                             font-semibold  text-transparent italic
                             bg-linear-to-r from-[#84e2fa] via-[#9dd7f7] to-[#b2a0fe] bg-clip-text
                             '
@@ -88,9 +88,9 @@ const Hero = () => {
               <p>I'm <span className='font-bold text-white'>Bilal Khalifa</span> — a Computer Engineer and Full Stack Developer crafting interfaces that feel <span className='text-[#97E6F5]'>inevitable</span>: fast, elegant, considered to the pixel.
               </p>
             </div>
-            <div className='flex gap-5 mt-5 text-sm font-nav font-medium items-center '>
+            <div className='flex flex-col sm:flex-row gap-3 mt-5 text-sm font-nav font-medium items-start sm:items-center w-full'>
                 <button 
-                        className='bg-white flex gap-2 rounded-full  py-3 px-6 items-center cursor-pointer whitespace-nowrap'
+                        className='bg-white flex gap-2 rounded-full  py-3 px-4 sm:px-6 w-full sm:w-fit items-center cursor-pointer whitespace-nowrap justify-center'
                         onMouseEnter={()=>arrowRef.current?.startAnimation()}
                         onMouseLeave={()=>arrowRef.current?.stopAnimation()}
                 >
@@ -98,23 +98,23 @@ const Hero = () => {
                 </button>
                 <button 
                   className='flex gap-3
-                  text-white items-center whitespace-nowrap
+                  text-white items-center whitespace-nowrap justify-center
                     border border-white/10 rounded-full
-                  bg-white/5 py-3 px-6 cursor-pointer tracking-widest'
+                  bg-white/5 py-3 px-4 sm:px-6 w-full sm:w-fit cursor-pointer tracking-widest'
                   onMouseEnter={()=>mailRef.current?.startAnimation()}
                   onMouseLeave={()=>mailRef.current?.stopAnimation()}
                 >
                   Get in touch <MailFilledIcon className='size-7' ref={mailRef}/>
                 </button>
             </div>
-            <div className='font-nav text-white/50 mt-12 text-[10px] tracking-[3px] flex items-center gap-4'>
+            <div className='font-nav text-white/50 mt-12 text-[10px] tracking-[3px] flex items-center justify-center lg:justify-start gap-4 w-full lg:w-fit'>
               <span className='h-px w-14 bg-white/30 inline-block'></span> 
               SCROLL TO BEGIN 
               <span className='h-px w-14 bg-white/30 inline-block'></span>
             </div>
         </div>
         {/* Right Container */}
-        <div ref={rightRef} className="right will-change-transform w-full md:w-1/2 h-full relative px-6 md:pl-20 xl:pl-50 flex justify-center md:justify-start">
+        <div ref={rightRef} className="right will-change-transform w-full lg:w-1/2 h-full relative px-6 md:pl-20 xl:pl-50 flex justify-center lg:justify-start">
           <motion.div 
             animate={{rotate:360}}
             transition={{
@@ -135,14 +135,14 @@ const Hero = () => {
             ease: "easeInOut"
           }}
           className='
-                      z-20 relative border-2 border-white/10 h-fit md:h-135 w-full max-w-97.5 rounded-4xl md:rounded-4xl
-                      backdrop-blur-4xl bg-transparent-pill/20 p-4 md:p-0 flex flex-col md:block  gap-4
+                      z-20 relative border-2 border-white/10 h-fit lg:h-135 w-full max-w-97.5 rounded-4xl
+                      backdrop-blur-4xl bg-transparent-pill/20 p-4 lg:p-0 flex flex-col lg:block gap-4
                       will-change-transform antialiased backface-hidden
                     '
         >
             <div className=" 
-                            relative profile w-full h-[360px] md:w-85.25 md:h-108 md:m-5 
-                            rounded-3xl md:rounded-4xl overflow-hidden
+                            relative profile w-full h-[360px] lg:w-85.25 lg:h-108 lg:m-5 
+                            rounded-3xl lg:rounded-4xl overflow-hidden
                           "
             >
                 <img 
@@ -152,14 +152,14 @@ const Hero = () => {
                 />
             </div>
             <div className="description w-full flex justify-between items-start px-2 md:px-0 mt-2 md:mt-0">
-              <div className="left flex flex-col  md:ml-7 -mt-2">
+              <div className="left flex flex-col  lg:ml-7 -mt-2">
                   <span className='text-white font-hero text-[20px] font-semibold leading-none whitespace-nowrap'>Bilal Khalifa</span>
                   <span className='font-[Montserrat] text-xs text-[#97E6F5] italic mt-1 whitespace-nowrap '>Computer Engineer</span>
               </div>
               <div 
                   className="right flex flex-col gap-2 md:gap-1
                   font-nav text-[10px] text-white/50
-                  items-end md:mr-7 -mt-2"
+                  items-end lg:mr-7 -mt-2"
               >
                 <p className='flex gap-2 items-center whitespace-nowrap'>
                   <RiMapPinLine size={15} /> Eru,Navsari, India

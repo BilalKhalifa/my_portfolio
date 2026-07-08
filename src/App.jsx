@@ -10,6 +10,7 @@ import Skills from './features/skills/Skills'
 import Resume from './features/resume/Resume'
 import Contact from './features/contact/Contact'
 import Work from './features/work/Work'
+import { Toaster } from 'react-hot-toast'
 
 
 const App = () => {
@@ -21,6 +22,8 @@ const App = () => {
       smoothWheel: true
     })
 
+    window.lenis = lenis
+
     return () => {
       lenis.destroy()
     }
@@ -29,6 +32,19 @@ const App = () => {
 
   return (
   <div>
+    <Toaster 
+      position='bottom-right'
+      toastOptions={{
+        style:{
+          borderRadius: '16px',
+          background: '#0b1329',
+          color: '#fff',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          fontFamily:'Montserrat, sans-serif',
+          fontSize: '13px'
+        }
+      }}
+    />
     <Navbar />
     <CursorGlow />
     <Scroller />

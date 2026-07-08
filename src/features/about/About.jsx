@@ -17,12 +17,12 @@ const About = () => {
         <RiBardLine size={15} className='text-[#97E6F5]' /> // About · Command Center
       </div>
       <div>
-        <div className='heading w-full md:w-1/2 text-4xl md:text-6xl font-semibold font-hero mt-5'>
+        <div className='heading w-full lg:w-1/2 text-4xl lg:text-6xl font-semibold font-hero mt-5'>
           <span className='bg-linear-to-r from-[#f2f6f7] to-[#96dcf2] bg-clip-text text-transparent'>A computer engineer, </span>
           <span className='bg-linear-to-r from-[#80defa] via-[#99e1f5] to-[#b2a2fd] bg-clip-text text-transparent'>building every week.</span>
         </div>
       </div>
-      <div className=' w-full md:w-1/2 mt-7 text-base md:text-lg text-white/50 font-nav'>
+      <div className=' w-full lg:w-1/2 mt-7 text-base lg:text-lg text-white/50 font-nav'>
         2026 Computer Engineering graduate at GIDC · GTU. Obsessed with frontend craft — React, motion design, and building things people love to use.
       </div>
       {/* Git info Cards */}
