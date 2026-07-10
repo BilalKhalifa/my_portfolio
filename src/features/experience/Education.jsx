@@ -4,7 +4,7 @@ import './education.css'
 import { RiArrowRightLongLine, RiGithubLine } from '@remixicon/react'
 const Education = () => {
   return (
-    <div className='h-full flex flex-col gap-6 w-full bg-primary px-6 py-20 md:px-16 md:py-32 xl:px-75 xl:py-45'>
+    <div className='h-full flex flex-col gap-6 w-full bg-primary px-6 py-20 md:px-16 md:py-32 xl:px-28 xl:py-36'>
       <div id="title" className='flex w-full items-center gap-3 '>
         <span className='grow inline-block h-[0.5px] bg-linear-to-l from-[white]/30 to-[white]/0'></span>
         <span className='uppercase  text-white/50 font-nav text-[10px] tracking-[3px] whitespace-nowrap shrink-0'>Academic Journey</span>

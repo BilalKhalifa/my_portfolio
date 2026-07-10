@@ -7,7 +7,7 @@ import githubStats from '@/data/github-stats.json'
 const About = () => {
 
   return (
-    <div className='h-full flex flex-col gap-6 w-full bg-primary px-6 pt-24 md:px-16 md:pt-32 xl:px-75 xl:pt-45'>
+    <div className='h-full flex flex-col gap-6 w-full bg-primary px-6 pt-24 md:px-8 md:pt-32 xl:px-28 xl:pt-36'>
       <div 
           className='
                       flex gap-2

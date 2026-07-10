@@ -16,7 +16,7 @@ const Resume = () => {
   ]
 
   return (
-    <div className='h-full w-full bg-primary text-white px-6 py-20 md:px-16 md:py-32 xl:px-75 xl:py-45'>
+    <div className='h-full w-full bg-primary text-white px-6 py-20 md:px-16 md:py-32 xl:px-28 xl:py-36'>
       <h1 
           className=' 
                       flex gap-3 
@@ -45,9 +45,9 @@ const Resume = () => {
                         border border-white/10  
                       '
       >
-        <div className='grid grid-cols-1 lg:grid-cols-2 items-center gap-10 '>
+        <div className=' w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-10 '>
           {/* left */}
-          <div className=' h-full flex flex-col items-start justify-center font-nav my-auto'>
+          <div className=' h-full flex flex-col items-start justify-center font-nav my-auto lg:pl-30'>
             <h5 className='text-[10px] tracking-[2.2px] text-[#97E6F5] uppercase'>
                 pdf · Updated 2026
             </h5>
@@ -88,21 +88,29 @@ const Resume = () => {
             </div>
           </div>
           {/* right */}
-          <div className='relative h-[600px] lg:h-200 rounded-2xl border border-white/10 bg-white-5 overflow-hidden hidden lg:block'>
-              <div 
-                  className='absolute top-0 left-0 right-0 z-10 px-4 py-2  bg-black/40 backdrop-blur-md border-b border-white/10'
-              >
-                <p className='text-xs text-white/60 tracking-widest'>
-                  PDF · SCROLL TO VIEW
-                </p>
-              </div>
+          <div className='hidden lg:flex justify-end lg:pr-10 w-full h-full'>
+            <div 
+              onClick={() => window.open('/Bilal_Khalifa_Resume.pdf', '_blank')}
+              className='relative h-full w-full max-w-[565px] rounded-2xl border border-white/10 bg-white-5 overflow-hidden cursor-pointer group/preview'
+            >
+                {/* Header Banner - Floating on top */}
+                <div 
+                    className='absolute top-0 left-0 right-0 z-10 px-4 py-3 bg-primary/80 backdrop-blur-md border-b border-white/10 group-hover/preview:bg-primary/95 transition-colors duration-200'
+                >
+                  <p className='text-xs text-white/60 tracking-widest group-hover/preview:text-white transition-colors duration-200'>
+                    TAP TO PREVIEW
+                  </p>
+                </div>
 
-              <div className='w-full h-full pt-10 overflow-y-auto'>
-                <iframe 
-                        src='/Bilal_Khalifa_Resume.pdf'
-                        className='h-full w-full '
-                />
-              </div>
+                {/* Scrollable Container - Pushed down by pt-12 to clear the header */}
+                <div className='w-full h-full pt-12 overflow-y-auto'>
+                  <img 
+                    src='/images/resume-preview.png'
+                    alt='Resume Preview'
+                    className='w-full h-auto object-top transition-transform duration-500 group-hover/preview:scale-[1.01]'
+                  />
+                </div>
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ const Skills = () => {
   const [selectCategory, setSelectCategory] = useState('all')
 
   return (
-    <div className='h-full w-full bg-primary text-white px-6 py-20 md:px-16 md:py-32 xl:px-75 xl:py-45'>
+    <div className='h-full w-full bg-primary text-white px-6 py-20 md:px-16 md:py-32 xl:px-28 xl:py-36'>
       <h1 className='text-[10px] font-(family-name:--nav-font) uppercase flex gap-3 tracking-[3px] text-white/50'>
         <RiBardLine size={15} className='text-[#97E6F5]' /> // toolkit · stack
       </h1>

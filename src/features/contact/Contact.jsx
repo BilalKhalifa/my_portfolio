@@ -19,7 +19,7 @@ const Contact = () => {
 
 
   return (
-    <div className='min-h-screen w-full bg-primary px-6 pt-32 pb-16 md:px-16 md:py-32 xl:px-74 xl:py-45 flex flex-col lg:justify-center'>
+    <div className='min-h-screen w-full bg-primary px-6 pt-32 pb-16 md:px-16 md:py-32 xl:px-28 xl:py-36 flex flex-col lg:justify-center'>
       <h1 className='flex gap-3 text-[10px] font-nav tracking-[3px] uppercase text-white/50'>
         <Sparkles size={15} color='#97E6F5'/>Contact Me
       </h1>
