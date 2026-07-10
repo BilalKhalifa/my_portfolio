@@ -105,7 +105,7 @@ const Resume = () => {
                 {/* Scrollable Container - Pushed down by pt-12 to clear the header */}
                 <div className='w-full h-full pt-12 overflow-y-auto'>
                   <img 
-                    src='/images/resume-preview.png'
+                    src='/images/Bilal_Khalifa_Resume.png'
                     alt='Resume Preview'
                     className='w-full h-auto object-top transition-transform duration-500 group-hover/preview:scale-[1.01]'
                   />
