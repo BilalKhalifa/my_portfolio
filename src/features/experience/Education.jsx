@@ -2,7 +2,26 @@ import { timelineData } from '../../data/timelineData'
 import { GitHubCalendar } from 'react-github-calendar'
 import './education.css'
 import { RiArrowRightLongLine, RiGithubLine } from '@remixicon/react'
+import { useEffect, useRef } from 'react'
 const Education = () => {
+
+  const calendarContainerRef = useRef(null)
+
+    useEffect(() => {
+    const container = calendarContainerRef.current;
+    if (!container) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      container.scrollLeft = container.scrollWidth;
+    });
+
+    resizeObserver.observe(container);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   return (
     <div className='h-full flex flex-col gap-6 w-full bg-primary px-6 py-20 md:px-16 md:py-32 xl:px-28 xl:py-36'>
       <div id="title" className='flex w-full items-center gap-3 '>
@@ -70,37 +89,41 @@ const Education = () => {
           </div>
         </div>
         {/* Calender */}
-        <div className='  mt-7 mx-auto w-fit max-w-full overflow-x-auto text-white backdrop-blur-2xl bg-white/20 p-4 md:p-8 rounded-3xl no-scrollbar'>
-          <GitHubCalendar
-            username='BilalKhalifa'
-            theme={{
-              light : [
-              '#1b1f2a',
-              '#48508d',
-              '#8175dc',
-              '#49afff',
-              '#64e2ff'
-            ],
-            dark : [
-              '#1b1f2a',
-              '#48508d',
-              '#8175dc',
-              '#49afff',
-              '#64e2ff'
-            ],
-          }}
-          tooltips={{
-            activity: {
-              text: activity => `${activity.count} contribution on ${activity.date}`,
-              placement: 'top',
-            }
-          }}
-          blockRadius={4}
-          blockMargin={6}
-          blockSize={14}
-          showWeekdayLabels={true}
-          className='font-nav text-white/50 uppercase text-xs!'
-          />
+        <div 
+          ref={calendarContainerRef}
+          className='  mt-7 mx-auto w-fit max-w-full overflow-x-auto text-white backdrop-blur-2xl bg-white/20 p-4 md:p-8 rounded-3xl no-scrollbar'>
+          <div style={{direction: 'rtl'}}>
+            <GitHubCalendar
+              username='BilalKhalifa'
+              theme={{
+                light : [
+                '#1b1f2a',
+                '#48508d',
+                '#8175dc',
+                '#49afff',
+                '#64e2ff'
+              ],
+              dark : [
+                '#1b1f2a',
+                '#48508d',
+                '#8175dc',
+                '#49afff',
+                '#64e2ff'
+              ],
+            }}
+            tooltips={{
+              activity: {
+                text: activity => `${activity.count} contribution on ${activity.date}`,
+                placement: 'top',
+              }
+            }}
+            blockRadius={4}
+            blockMargin={6}
+            blockSize={14}
+            showWeekdayLabels={true}
+            className='font-nav text-white/50 uppercase text-xs!'
+            />
+          </div>
         </div>
       </div>
     </div>

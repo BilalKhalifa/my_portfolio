@@ -4,7 +4,7 @@ import { ScrollToPlugin } from 'gsap/all'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence} from 'motion/react'
-
+import GlassSurface from '../../ui/GlassSurface'
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -70,8 +70,18 @@ const Navbar = () => {
                       justify-between lg:justify-center items-center 
                       gap-5 h-fit w-[92%] lg:w-fit left-[50%] transform translate-x-[-50%] 
                       px-4 py-3 md:px-2 md:py-2 
-                      bg-transparent-pill/10 backdrop-blur-lg rounded-[20px] lg:rounded-full border border-white/5 z-50'
+                      rounded-[20px] lg:rounded-full z-50
+                      '
       >
+        <div className='absolute inset-0 -z-10 w-full h-full'>
+          <GlassSurface 
+            width='100%'
+            height='100%'
+            borderRadius={25}
+            displace={2.6}
+          />
+        </div>
+        
         <h4 
             className='text-white font-medium cursor-pointer text-xs leading-5 font-nav whitespace-nowrap' 
             onClick={() => scrollToSection('hero')}
